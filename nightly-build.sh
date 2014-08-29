@@ -6,11 +6,14 @@ set -e
 # License: GPL-2+
 
 # User variables
-DEST="mapnik" # the launchpad account name
+DEST="pnorman" # the launchpad account name
 # Build signing info...
-GPGKEY=80B52FF1
-DEBFULLNAME="Robert Coup (Mapnik Nightly Builds)"
-DEBEMAIL="robert+mapniknightly@coup.net.nz"
+GPGKEY=15746D5C
+DEBFULLNAME="Paul Norman (PPA signing key)"
+DEBEMAIL="penorman@mac.com"
+#GPGKEY=80B52FF1
+#DEBFULLNAME="Robert Coup (Mapnik Nightly Builds)"
+#DEBEMAIL="robert+mapniknightly@coup.net.nz"
 #GPGKEY=89DBC525
 #DEBFULLNAME="Dane Springmeyer (Mapnik Nightly Builds)"
 #DEBEMAIL="dane.springmeyer@gmail.com"
@@ -21,34 +24,34 @@ DEBEMAIL="robert+mapniknightly@coup.net.nz"
 # branch values are the latest official release from the branch
 declare -A BRANCHES
 BRANCHES["master"]="3.0.0"
-BRANCHES["2.3.x"]="2.3.0"
-BRANCHES["2.2.x"]="2.2.0"
-BRANCHES["2.1.x"]="2.1.1"
-BRANCHES["2.0.x"]="2.0.1"
+#BRANCHES["2.3.x"]="2.3.0"
+#BRANCHES["2.2.x"]="2.2.0"
+#BRANCHES["2.1.x"]="2.1.1"
+#BRANCHES["2.0.x"]="2.0.1"
 
 # PPA names, keys are branches
 declare -A PPAS
-PPAS["master"]="ppa:$DEST/nightly-trunk"
-PPAS["2.3.x"]="ppa:$DEST/nightly-2.3"
-PPAS["2.2.x"]="ppa:$DEST/nightly-2.2"
-PPAS["2.1.x"]="ppa:$DEST/nightly-2.1"
-PPAS["2.0.x"]="ppa:$DEST/nightly-2.0"
+PPAS["master"]="ppa:$DEST/mapnik-testing"
+#PPAS["2.3.x"]="ppa:$DEST/nightly-2.3"
+#PPAS["2.2.x"]="ppa:$DEST/nightly-2.2"
+#PPAS["2.1.x"]="ppa:$DEST/nightly-2.1"
+#PPAS["2.0.x"]="ppa:$DEST/nightly-2.0"
 
 # Package names, keys are branches
 declare -A PACKAGES
 PACKAGES["master"]="mapnik"
-PACKAGES["2.3.x"]="mapnik"
-PACKAGES["2.2.x"]="mapnik"
-PACKAGES["2.1.x"]="mapnik"
-PACKAGES["2.0.x"]="mapnik"
+#PACKAGES["2.3.x"]="mapnik"
+#PACKAGES["2.2.x"]="mapnik"
+#PACKAGES["2.1.x"]="mapnik"
+#PACKAGES["2.0.x"]="mapnik"
 
 # Ubuntu Distributions to build (space-separated)
 declare -A DISTS
 DISTS["master"]="trusty utopic"
-DISTS["2.3.x"]="trusty saucy precise lucid utopic"
-DISTS["2.2.x"]="trusty saucy precise lucid utopic"
-DISTS["2.1.x"]="trusty saucy precise lucid utopic"
-DISTS["2.0.x"]="trusty saucy precise lucid utopic"
+#DISTS["2.3.x"]="trusty saucy precise lucid utopic"
+#DISTS["2.2.x"]="trusty saucy precise lucid utopic"
+#DISTS["2.1.x"]="trusty saucy precise lucid utopic"
+#DISTS["2.0.x"]="trusty saucy precise lucid utopic"
 
 ######### Shouldn't need to edit anything past here #########
 
